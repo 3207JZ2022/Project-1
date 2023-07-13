@@ -1,0 +1,27 @@
+<div class="product-container" *ngIf="product">
+    <div class="product-body">
+        <div class="product-imgs-layout">
+            <img [src]="product.imgSrc" alt="product.title" class="product-img">
+        </div>
+        <div class="product-content-main">
+            <h4>{{product.name}}</h4>
+            <app-rating-star [rating]="getRating()"></app-rating-star>
+            <hr>
+            <p class="product-price">${{product.price}}</p>
+            <p>{{product.description}}</p>
+            <div class="purchase-layout">
+                <app-purchase
+                    [product]="product"
+                ></app-purchase>
+            </div>
+        </div>
+
+
+    </div>
+    <hr>
+    <div class="review-layout">
+        <span>Customer reviews</span>
+        <app-reviews></app-reviews>
+    </div>
+
+</div>

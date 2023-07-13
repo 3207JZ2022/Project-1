@@ -1,0 +1,22 @@
+<div class="page-control-container">
+    <ul class="btn-list">
+        <li >
+            <button class="control-btn" *ngIf="pageBtnArray.length>1"
+            (click)="prevIndex()" [disabled]="indexPadding==0&&indexDifference==0">
+                Prev
+            </button>
+        </li>
+        <li class="page-btn" *ngFor="let item of pageBtnArray; let i = index">
+            <button (click)="setIndex(i)" [ngClass]="indexDifference==i? 'selected':''">
+                {{i+1 + indexPadding}}
+            </button>
+        </li>
+
+        <li >
+            <button class="control-btn" *ngIf="pageBtnArray.length>1"
+            (click)="nextIndex()" [disabled]="this.indexDifference+this.indexPadding>=this.pageTotal-1">
+                Next
+            </button>
+        </li>
+    </ul>
+</div>

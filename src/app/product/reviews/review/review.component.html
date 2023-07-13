@@ -1,0 +1,21 @@
+
+<div class="review-container">
+    <div class="review-body">
+        <div class="review-header">
+            <img class="customer-portrait" [src]="customerPortrait">
+            <h5 class="customer-name">{{customerName}}</h5>
+        </div>  
+        <app-rating-star [rating]="review.rating">
+        </app-rating-star>
+        <div class="review-headline">
+            <h4 class="reivew-tiitle">{{review.headline}}</h4>
+            <h4 class="review-order-status">Order Status: {{review.status}}</h4>
+        </div>
+        <div>
+            <p class="review-content">
+                {{review.content}}
+            </p>
+        </div>
+    </div>
+
+</div>

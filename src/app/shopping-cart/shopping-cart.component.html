@@ -1,0 +1,32 @@
+<div class="shopping-cart-container">
+    <div *ngIf="!cart[0]" class="empty-cart-messeage">
+        Your cart is empty.
+    </div>
+    <div *ngIf="cart[0]" class="none-empty-cart">
+        <form  (ngSubmit)="onSubmit()" class="shopping-cart-form" >
+            <div class="cart-header">
+                <h3 class="cart-title">Your Cart</h3>
+                <p class="price-tag">Price</p>
+            </div>
+            <span class="check-all" (click)="clearCart()">
+                Clear Cart
+            </span>
+            <app-shopping-edit
+                *ngFor="let orderItem of cart; let i = index"
+                [orderItem]="orderItem"
+                [itemIndex]="i"
+            >
+            </app-shopping-edit>
+        </form>
+        <div class="form-submit">
+            <div class="notification">
+                <h4 class="eligible">Qualifies for FREE shipping</h4>
+            </div>
+            <div class="confirmation">
+                <p>Subtotal: <span class="subtotal">${{getSubtotal()}}</span></p>
+                <button class="checkout-btn" (click)="navToCheckOut()">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+</div>

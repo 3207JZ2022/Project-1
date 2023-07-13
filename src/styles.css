@@ -1,0 +1,39 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { 
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+}
+
+.app-body{
+    padding: 0px 0px;
+    /* background-color: rgba(117, 117, 117, 0.1); */
+    min-height: calc( 100vh - 6em);
+    background-color: white;
+    background-image: url('~src/assets/imgs/cubes.png');
+
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 10px;
+    background: #c5c5c5;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #c5c5c5;
+    /* border-radius: 15px; */
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #489e90aa;
+    border-radius: 25px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #4dc2ae;
+  }

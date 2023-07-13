@@ -1,0 +1,16 @@
+<div class="orders-container">
+    <div class="orders-header">
+        <h3>Your Orders</h3>
+    </div>
+
+    <div *ngIf="!orders[0]">
+        <h4>You haven't placed any orders yet</h4>
+    </div>
+
+    <div *ngIf="orders[0]">
+        <app-order *ngFor="let order of orders"
+        [order]="order"
+        ></app-order>
+    </div>
+
+</div>

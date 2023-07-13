@@ -1,0 +1,39 @@
+page-control-container{
+    user-select: none;
+}
+
+.btn-list{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+li{
+    list-style: none;
+    padding:  2px;
+}
+
+li .page-btn{
+    /* border-radius:1px; */
+    width: 30px;
+    height: 30px;
+}
+
+.control-btn{
+    width:fit-content;
+}
+
+.selected{
+    border-radius: 2px;
+    width: 30px;
+    height: 30px;
+    border: 1.2px solid #6e6e6e;
+    font-size: 18px;
+}
+
+.selected::after{
+    content: "";
+    border-right:1px #2b2b2b;
+}
+
+

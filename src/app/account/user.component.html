@@ -1,0 +1,36 @@
+<div class="user-container">
+    <div class="nav-list-container">
+
+        <ul class="nav-list">
+            <div class="list-title">
+                Your Account
+            </div>
+            
+            <li routerLinkActive="active" class="list-item">
+                <a routerLink="profile" class="router-link">
+                    Profile
+                </a>
+            </li>
+            <li routerLinkActive="active" class="list-item" [routerLinkActiveOptions]="{ exact: true }">
+                <a routerLink="/account" class="router-link">
+                    Orders
+                </a>
+            </li>
+            <li routerLinkActive="active" class="list-item">
+                <a routerLink="not-yet-shipped" class="router-link">
+                    Not Yet Shipped
+                </a>
+            </li>
+            <li routerLinkActive="active" class="list-item">
+                <a routerLink="canceled-orders" class="router-link">
+                    Cancelled Orders
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div>
+        <router-outlet></router-outlet>
+    </div>
+</div>
+

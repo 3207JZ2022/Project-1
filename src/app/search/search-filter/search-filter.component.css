@@ -1,0 +1,43 @@
+.search-filter-container{
+    border:1px solid #fff;
+    padding: 4px;
+}
+
+.filter-form{
+    position: relative;
+    left:0px;
+    padding: 4px 1px;
+}
+
+.btn-layout{
+    text-align: center;
+    user-select: none;
+}
+
+.apply-btn{
+    padding: 4px 8px;    
+    width: 100%;
+    border-radius:15px;
+    border:0.2px solid #fbc634;
+    font-weight:bold;
+    background-color: #fbc634;
+}
+
+
+.filter-list{
+    position: relative;
+    left:0px;
+    padding:2px 0px;
+}
+
+li{
+    list-style: none;
+    padding:2px;
+}
+
+
+@media only screen and (max-width: 780px){
+    .filter-form{
+        top: 6em;
+    }
+}

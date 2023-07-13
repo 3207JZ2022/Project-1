@@ -1,0 +1,14 @@
+
+<div class="products-container" *ngIf="products">
+    <div class="products-header" >
+        <h4>Results</h4>
+    </div>
+    <ul>
+        <li *ngFor="let product of products; let i = index">
+            <app-products-detail
+                [product]="product"
+            >
+            </app-products-detail>
+        </li>
+    </ul>
+</div>

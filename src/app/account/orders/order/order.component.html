@@ -1,0 +1,52 @@
+<div class="order-container" *ngIf="products[0]">
+    <div class="order-header content-padding">
+        <div class="order-header-layout">
+            <div class="order-header-label">Order Placed</div>
+            <div class="order-header-content">
+                {{order.date}}    
+            </div>
+        </div>
+        <div class="order-header-layout">
+            <div class="order-header-label">Total</div>
+            <div class="order-header-content">
+                ${{order.total}}
+            </div>
+        </div>
+        <div class="order-header-layout">
+            <div class="order-header-label">Ship To</div>
+            <div class="order-header-content">
+                {{order.shipTo.fullName}}
+            </div>
+        </div>
+        <div class="order-header-layout">
+            <div class="order-header-label">Order #{{order.orderId}}</div>
+            <div class="order-header-content">
+                Status:{{order.status}} 
+            </div>
+        </div>
+    </div>
+
+    <div class="order-body content-padding">
+        <div class="order-item" *ngFor="let product of products">
+            <img [src]="product.imgSrc" alt="" class="product-img">
+            <div class="product-text">
+                <div class="product-name">{{product.name}}</div>
+                <div class="product-description">{{product.description}}</div>
+            </div>
+
+            <div class="btn-layout">
+                <button class="review-btn">Write a review</button>
+            </div>
+        </div>
+    </div>
+    <div class="order-footer content-padding">
+        <div class="order-footer-layout">
+            <p>
+                Transactions: 
+                {{order.payment.type}}: {{order.payment.detail}}
+            </p>
+        </div>
+    </div>
+
+    
+</div>

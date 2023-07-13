@@ -1,0 +1,7 @@
+<div class=".rating-star-container">
+    <fa-icon *ngFor="let star of starCollection; let i = index" 
+      [icon]="star" [ngStyle]='ratingStyle'
+      >
+    </fa-icon>
+    <span class="rating-text">{{rating}} out of {{maxStar}}</span>
+</div>

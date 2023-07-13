@@ -1,0 +1,40 @@
+.support-container{
+    padding: 0px 5%;
+}
+
+.support-header{
+    font-size: 26px;
+    font-weight: 500;
+    padding: 10px;
+}
+
+.support-body{
+    padding: 10px;
+
+}
+
+li{
+    list-style:none ;
+}
+
+li::before{
+    content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+    color:rgb(36, 187, 187); /* Change the color */
+    font-weight: bold; /* If you want it to be bold */
+    display: inline-block; /* Needed to add space between the bullet and the text */
+    width: 1em; /* Also needed for space (tweak if needed) */
+    margin-left: -1em; /* Also needed for space (tweak if needed) */
+    position: absolute;
+}
+
+.qa{
+    padding: 5px 0px;
+}
+
+.question{
+    color: rgb(36, 187, 187);
+}
+
+.answer{
+    color:  rgb(23, 132, 132);
+}

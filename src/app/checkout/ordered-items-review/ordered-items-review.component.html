@@ -1,0 +1,30 @@
+<div class="ordered-items-review-container" *ngIf="products[0]">
+    <ul class="review-list">
+        <li class="review-item" *ngFor="let product of products; let i =index">
+            <div class="item-container">
+                <div class="img-layout">
+                    <img [src]="product.imgSrc" alt="" class="imgSrc">
+                </div>
+                <div class="content-layout">
+
+                    <div class="item-name">
+                        {{product.name}}
+                    </div>
+                    <div class="order-detail">
+                        <div class="item-price content-item">
+                            Unit Price:{{product.price}}
+                        </div>
+                        <div class="item-quantity content-item">
+                            Quantity:{{orderedItems[i].quantity}}
+                        </div>
+                        <div class="total content-item">
+                            Price:{{(product.price*orderedItems[i].quantity)|decimalPlace2}}
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </li>
+    </ul>
+</div>

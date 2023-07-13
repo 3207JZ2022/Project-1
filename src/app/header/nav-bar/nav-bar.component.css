@@ -1,0 +1,41 @@
+.nav-bar-container{
+    height: 2em;
+    background-color: rgb(36, 187, 187);
+    padding: 0px 5%;
+    width: 100%;
+    box-shadow: 0px 1px 1px 1px rgba(7, 130, 245, 0.6);
+}
+
+.nav-layout{
+    position:relative;
+    height:100%;
+
+}
+
+.nav-list{
+    height:100%;
+    display:flex;
+    position: absolute;
+    right: calc(5% + 10px);
+    padding: 0px;
+    margin: 0px;
+}
+
+li{
+    list-style:none;
+    padding: 2px 10px;
+    transition: 200ms;
+    /* border-top: 1px solid transparent; */
+
+}
+
+li:hover{
+    transform: scale(1.2);
+}
+
+.nav-links{
+    text-decoration: none;
+    color:aliceblue;
+    cursor: pointer;
+    user-select: none;
+}

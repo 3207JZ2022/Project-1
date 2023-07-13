@@ -1,0 +1,39 @@
+<div class="purchase-container">
+    <div class="product-purchase">
+        <p class="product-price">${{product.price}}</p>
+
+        <div class="purchase-eligible">
+            <ul class="eligibe-list">
+                <h4 class="eligible-title">Eligible</h4>
+                <li class="eligible-list-item">Free Return</li>
+                <li class="eligible-list-item">Free Delivery</li>
+                <li class="eligible-list-item">In Stock</li>
+                <li class="eligible-list-item">Refund or Replacement within 30 days of receipt</li>
+            </ul>
+        </div>
+
+    </div>
+    <hr>
+    <div class="purchase-option">
+        <select class="select-options" [(ngModel)]="quantity">
+            <option value="1" class="select-option">1</option>
+            <option value="2" class="select-option">2</option>
+            <option value="3" class="select-option">3</option>
+            <option value="4" class="select-option">4</option>
+            <option value="5" class="select-option">5</option>
+        </select>
+
+        <div class="purchase-btns">
+            <button class="add-to-cart purchase-btn"
+                (click)="btnClickEffect1()"  [ngClass]="clickEffect1? 'trigger':''"
+            >
+                Add to Cart
+            </button>
+            <button class="buy-now purchase-btn"
+            (click)="btnClickEffect2()"  [ngClass]="clickEffect2? 'trigger':''"
+            >
+                Check Out
+            </button>
+        </div>
+    </div>
+</div>

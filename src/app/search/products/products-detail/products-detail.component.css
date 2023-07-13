@@ -1,0 +1,108 @@
+.product-detail-container{
+    width: 100%;
+    overflow: hidden;
+
+    display: flex;
+    margin-bottom: 5px;
+    border-left: 0.2px solid  #9f9f9fa2;
+
+}
+
+.product-text-area{
+    padding: 0px 10px;
+}
+
+.product-detail-img{
+    width: 150px;
+    height: 150px;
+}
+
+.rating-area{
+    padding-right: 10px;
+}
+
+.product-detail-name{
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.product-detail-name:hover{
+    color:rgb(36, 187, 187)
+}
+
+.product-detail-description{
+    overflow-y: auto;
+    height:70px;
+}
+
+.rating-color{
+    color:#fbc634 ;
+}
+
+.text-area-footer{
+    position: relative;
+}
+
+.review-count{
+    font-weight:400;
+    margin-bottom:2px;
+    font-size:18px ;
+}
+
+.product-detail-price{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+
+.nav-btn{
+    position: relative;
+    top:35%;
+    padding: 4px 8px;
+    border-radius: 10px;
+    border: 0.2px solid ;
+    color: #fbc634;
+    background-color: white;
+
+    
+}
+
+.nav-btn:hover{
+    color: rgb(255, 255, 255);
+    background-color: #fbc634;
+
+
+}
+
+
+.app-body{
+    padding: 0px 0px;
+    /* background-color: rgba(117, 117, 117, 0.1); */
+    min-height: calc( 100vh - 6em);
+    background-color: white;
+    background-image: url('~src/assets/imgs/cubes.png');
+
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 10px;
+    background: #c5c5c5;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #c5c5c5;
+    /* border-radius: 15px; */
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #489e90aa;
+    border-radius: 25px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #4dc2ae;
+  }

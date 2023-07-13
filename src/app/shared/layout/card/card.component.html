@@ -1,0 +1,8 @@
+<div class="card-container" >
+    <div class="text-area">
+        <h4 (click)="bindFunction(item.id)">{{item.title}}</h4>
+        <p>${{item.price}}</p>
+    </div>
+    <img class="img" [src]="item.imgSrc">
+
+</div>

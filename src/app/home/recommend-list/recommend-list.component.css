@@ -1,0 +1,49 @@
+.recommend-container{
+    width:calc(100% - 4px);
+    position: relative;
+    left: 4 px;
+}
+
+.recommend-list{
+    display:flex;
+    flex-wrap: wrap;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    
+}
+
+li{
+    list-style: none;
+
+}
+
+.list-item{
+    padding: 0px 2px;
+    width: 50%;
+
+}
+
+.card-item{
+    max-height: 200px;
+    width: 50%;
+}
+
+@media only screen and (max-width: 1020px){
+    .card-item{
+        width: 100%;
+    }
+    .list-item{
+        width: 100%;
+    
+    }
+}
+@media only screen and (max-width: 740px){
+    .card-item{
+        width: 50%;
+    }
+    .list-item{
+        width: 50%;
+    
+    }
+}

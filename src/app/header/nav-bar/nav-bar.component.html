@@ -1,0 +1,23 @@
+<div class="nav-bar-container">
+    <div class="nav-layout">
+        <ul class="nav-list">
+            <li routerLinkActive="active" >
+                <a routerLink="/" class="nav-links">
+                    Home
+                </a>
+            </li>
+            <li routerLinkActive="active" >
+                <a (click)="auth()" class="nav-links">
+                    {{loggedIn? 'Sign out': 'Sign in'}}
+                </a>
+            </li>
+            <li routerLinkActive="active" >
+                <a routerLink="/account" class="nav-links">
+                    Orders
+                </a>
+            </li>
+
+        </ul>
+    </div>
+
+</div>

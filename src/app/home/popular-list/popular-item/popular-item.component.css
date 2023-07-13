@@ -1,0 +1,24 @@
+.product-container{
+    display: flex;
+    cursor: pointer;
+}
+
+.product-img{
+    height:150px;
+    width:150px;
+    object-fit: cover;
+}
+
+.product-text{
+    padding: 0px 8px;
+}
+
+.product-name{
+    font-size: 18px;
+
+}
+
+.product-description{
+    font-size: 14px;
+
+}

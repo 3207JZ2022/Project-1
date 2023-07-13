@@ -1,0 +1,32 @@
+
+<div class="reviews-container">
+    <div class="review-total">
+
+        <div class="reviews-summary">
+            <app-rating-star
+            [rating]="getAverageRating()">
+
+            </app-rating-star>
+            <h4 class="reviews-count">
+                Ratings from {{reviews.length}} {{reviews.length==1? 'customer':'customers'}}
+            </h4>
+        </div>
+
+
+        <ul class="review-stats-list">
+            <li class="stats-list-item" *ngFor="let pStyle of percentageStyle; let i = index">
+                <p class="review-stats-header ">{{5-i}} star</p>
+                <p class="review-stats-bar" [ngStyle]="percentageStyle[4-i]"></p>
+                <p class="review-stats-header text-align-right" >{{percentageStyle[4-i].backgroundSize| getNumber}}%</p> 
+            </li>
+        </ul>
+    </div>
+
+    <ul class="reviews-list">
+        <li class="" *ngFor="let review of reviews">
+            <app-review
+                [review]="review"
+            ></app-review>
+        </li>
+    </ul>
+</div>

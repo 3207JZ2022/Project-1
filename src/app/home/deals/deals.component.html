@@ -1,0 +1,6 @@
+<app-carousel *ngIf="deals"
+    [unprocessedItems]="deals.products"
+    [width]="width"
+    [height]="height"
+    [bindFunction]="navToProduct"
+></app-carousel>

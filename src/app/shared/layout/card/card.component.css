@@ -1,0 +1,47 @@
+*{
+    user-select: none;
+}
+
+.card-container{
+    background-color:white;
+    border: 1px solid rgba(123, 123, 123, 0.618);
+    box-shadow: 0 1px 3px 0px rgba(57, 48, 48, 0.3);
+    border-radius: 3px;
+    position: relative;
+    top: 0px;
+    width: 100%;
+}
+
+
+.img{
+    object-fit:cover;
+    max-height: 200px;
+    max-width: 1000px;
+    width: 100%;
+}
+
+
+.text-area{
+    position: absolute;
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.618);
+    height: calc(100% - 8px);
+    padding: 2px;
+    word-break: break-all;
+    width: 25%;
+    min-width: 60px;
+}
+
+.text-area h4{
+    color: rgb(52, 52, 52);
+    word-break: break-all;
+    background-color: rgba(250, 235, 215, 0.678);
+    cursor: pointer;
+}
+
+.text-area p{
+    color: rgb(52, 52, 52);
+
+}
+
+

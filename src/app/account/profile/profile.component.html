@@ -1,0 +1,32 @@
+<div class="profile-container">
+    <div class="account-container sub-container">
+        <h2>Account</h2>
+        <div class="account-holder">
+            <h4 class="label">Account Holder:</h4>
+            <h4 class="value">{{account.fullName}}</h4>
+        </div>
+        <div class="phone-number">
+            <h4 class="label">Phone Number:</h4>
+            <h4 class="value">{{account.phoneNumber}}</h4>
+        </div>
+        <div class="email-address">
+            <h4 class="label">Email Address:</h4>
+            <h4 class="value">{{account.email}}</h4>
+        </div>
+    </div>
+
+    <div class="address-container sub-container">
+        <div class="address-layout">
+            <h2 class="address-header">Shopping Addrress</h2>
+            <div class="address-body value">
+                <div class="full-name ">{{address.fullName}}</div>
+                <div class="street ">{{address.street}}</div>
+                <div class="city-state-zipcode ">{{address.city}}, {{address.state}}, {{address.zipCode}}</div>
+                <div class="country ">{{address.country}}</div>
+                <div class="phone-number ">Phone Number: {{address.phoneNumber}}</div>
+            </div>
+
+        </div>
+        
+    </div>
+</div>

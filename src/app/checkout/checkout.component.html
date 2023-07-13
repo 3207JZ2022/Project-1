@@ -1,0 +1,43 @@
+<div class="checkout-container">
+    <div class="checkout-header">
+        Checkout({{itemNumber}} {{itemNumber==1? 'item':'items'}})
+    </div>
+    <div class="checkout-body">
+        <div class="checkout-list-layout">
+            <ul class="checkout-list">
+                <li class="list-item">
+                    <div class="item-title">
+                        Shipping Address
+                    </div>
+                    <div class="item-content">
+                        <app-address-review [address]="order.shipTo"></app-address-review>
+                    </div>
+                </li>
+                <li class="list-item">
+                    <div class="item-title">
+                        Payment Method
+                    </div>
+                    <div class="item-content">
+                        <app-payment-review [payment]="order.payment"></app-payment-review>
+                    </div>
+                </li>
+                <li class="list-item">
+                    <div class="item-title">
+                        Review Items
+                    </div>
+                    <div class="item-content">
+                        <app-ordered-items-review
+                            [orderedItems]="orderedItems"
+                        >
+
+                        </app-ordered-items-review>
+
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="payment-layout">
+            <app-payment></app-payment>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+.popular-item{
+    padding: 10px;
+    justify-content: flex-between;
+    
+}
+
+.popular-list-container{
+    display: flex;
+    width: 100%;
+    height: 160px;
+    
+}
+
+
+@media only screen and (max-width: 1020px){
+    .deals-layout{
+      display:block;
+    }
+  
+  }

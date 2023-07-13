@@ -1,0 +1,32 @@
+<div class="search-filter-container">
+    <form class="filter-form" >
+        <div class="btn-layout">
+            <button class="apply-btn" type="submit" (ngSubmit)="onSubmit()">
+                <span>Apply Filter</span>
+            </button>
+        </div>
+
+        <ul class="filter-list">
+            <li class="list-item">
+                <input type="checkbox" name="freeShipping">
+                <label>Free Shipping</label>
+            </li>
+            <li class="list-item">
+                <input type="checkbox" name="onSale">
+                <label>On Sale</label>
+            </li>
+            <li class="list-item">
+                <input type="checkbox" name="internationalShippingEligible">
+                <label>International Shipping Eligible</label>
+            </li>            
+            <li class="list-item">
+                <input type="checkbox" name="includeOutOfStock">
+                <label>Include Out of Stock</label>
+            </li> 
+
+        </ul>
+
+
+
+    </form>
+</div>

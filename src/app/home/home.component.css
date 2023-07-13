@@ -1,0 +1,86 @@
+.home-container{
+  padding: 0px 5%;
+}
+
+.popular-list-container{
+    overflow-x: hidden;
+    background-color:white;
+    padding: 10px 10px;
+    width: 100%;
+}
+
+.popular-list-container:hover{
+    overflow-x: overlay;
+}
+
+.popular-header{
+  position: relative;
+  top: 10px;
+  left:10px;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.deals-container{
+  padding-top: 2px;
+  width: 100%;
+}
+
+.deals-header{
+  position: relative;
+  left:10px;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.deals-layout{
+  display: flex;
+  padding: 10px;
+}
+
+@media only screen and (max-width: 960px){
+  .deals-layout{
+    display:block;
+  }
+}
+
+
+@media only screen and (max-width: 740px){
+  .deals-layout{
+    padding:0px;
+  }
+}
+
+
+@media only screen and (max-width: 560px){
+
+
+}
+
+
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 10px;
+    background: #c5c5c5;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #c5c5c5;
+    /* border-radius: 15px; */
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    /* background: rgba(76, 76, 76, 0.8); */
+    background: #489e90aa;
+    border-radius: 25px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #4dc2ae;
+  }
+
+  

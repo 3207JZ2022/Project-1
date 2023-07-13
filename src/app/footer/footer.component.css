@@ -1,0 +1,46 @@
+.footer-container{
+    width: 100%;
+    height:4em;
+}
+
+.footer-grid-container{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    text-align: center;
+}
+
+.footer-logo{
+    color: #3c3c3c;
+    width: 30%;
+}
+
+.footer-copyright{
+    width: 30%;
+}
+
+.footer-icon-container{
+    height:100%;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.link-icons{
+    text-decoration: none;
+    color: black;
+    padding: 2px;
+
+}
+
+.link-icons:hover{
+    color:rgb(39, 176, 174);
+}
+
+fa-icon{
+    padding: 2px 4px;
+    font-size:26px;
+}
+

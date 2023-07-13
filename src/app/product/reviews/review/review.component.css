@@ -1,0 +1,29 @@
+
+.review-container{
+    position: relative;
+    border-bottom: 0.5px solid rgba(172, 172, 172, 0.6);
+    top: -15px;
+    padding: 15px 0px 0px;
+
+}
+
+
+.review-header{
+    display:flex;
+    height:50px;
+}
+
+.customer-portrait{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+.customer-name{
+    position: relative;
+    top:15px;
+    height:50px;
+    font-size:20px;
+    padding: 0px 10px;
+}

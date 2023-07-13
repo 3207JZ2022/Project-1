@@ -1,0 +1,29 @@
+<div class="payment-container">
+    <div class="btn-layout">
+        <button class="order-btn" (click)="onSubmit()">Place Order</button>
+    </div>
+    <div class="order-summary">
+        <div class="summary-header">
+            <h4 class="header-title">Order Summary</h4>
+        </div>
+        <div class="summary-content">
+            <span class="align-left">Items:</span>
+            <span class="align-right">{{itemPrice|decimalPlace2}}</span>
+        </div>
+        <div class="summary-content">
+            <span class="align-left">Shipping:</span>
+            <span class="align-right">{{shippingFee|decimalPlace2}}</span>
+        </div>
+        <div class="summary-content">
+            <span class="align-left">Tax:</span>
+            <span class="align-right">{{tax*itemPrice|decimalPlace2}}</span>
+        </div>
+        <div class="summary-content">
+            <span class="align-left">Order Total:</span>
+            <span class="align-right">{{shippingFee+(1+tax)*itemPrice|decimalPlace2}}</span>
+        </div>        
+        
+        
+    </div>
+    <div class="faq"></div>
+</div>

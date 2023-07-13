@@ -1,0 +1,57 @@
+.payment-container{
+    padding: 20px;
+    border-radius: 10px;
+    border: 0.5px solid #8a8a8a8d;
+    width: 220px;
+}
+
+.btn-layout{
+    text-align: center;
+}
+
+.order-btn{
+    text-align: center;
+    padding: 4px 20px;
+    width: 100%;
+    border-radius: 15px;
+    border:0.5px solid#e0a70a;
+    background-color:#fbc634;
+    box-shadow: 0px 0px 1px 0px #ffc423;
+}
+
+.order-btn:hover{
+    background-color:#ffbb00;
+
+}
+
+.summary-content{
+    padding: 3px 2px;
+}
+
+.summary-header{
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 0.5px solid #8a8a8a8d;
+    width: 100%;
+}
+
+.header-title{
+    text-align: center;
+    margin: 0px;
+}
+
+.summary-content:last-child{
+    border-top: 0.5px solid #8a8a8a8d;
+}
+
+.align-right{
+    position: absolute;
+    right: 20px;
+}
+
+@media only screen and (max-width: 720px){
+    .payment-container{
+        width: 100%;
+        border: none;
+    }
+}

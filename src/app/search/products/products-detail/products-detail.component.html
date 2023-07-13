@@ -1,0 +1,24 @@
+<div class="product-detail-container" *ngIf="product">
+    <img [src]="product.imgSrc" class="product-detail-img">
+    <div class="product-text-area">
+
+        <p class="product-detail-name" (click)="navToProduct()" >{{product.name}}</p>
+        <p class="product-detail-description">{{product.description}}</p>
+
+        <div class="rating-area">
+            <app-rating-star [rating]="rating">
+            </app-rating-star>
+        </div>
+        <div class="text-area-footer">
+            <h5 class="review-count">{{reviewCount}} {{reviewCount!=1? 'Reviews':'Review'}}</h5>
+            <p class="product-detail-price">${{product.price}}</p>
+        </div>
+
+
+
+    </div>
+    <div class="btn-layout">
+        <button class="nav-btn" (click)="navToProduct()">Learn More</button>
+    </div>
+</div>
+

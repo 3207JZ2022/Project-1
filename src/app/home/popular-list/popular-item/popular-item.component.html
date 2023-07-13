@@ -1,0 +1,8 @@
+<div class="product-container" (click)="navToProduct()">
+    <img class="product-img" [src]="product.imgSrc">
+    <div class="product-text">
+        <p class="product-name">{{product.name}}</p>
+        <!-- <p class="product-description" >{{product.description}}</p> -->
+        <p class="product-description" >${{product.price}}</p>
+    </div>
+</div>

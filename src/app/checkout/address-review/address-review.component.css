@@ -1,0 +1,15 @@
+.address-review-container{
+    height: 100%;
+    padding: 20px;
+
+}
+
+.addres{
+
+}
+
+@media only screen and (max-width: 720px){
+    .address-review-container{
+        padding: 10px 20px;
+    }
+}

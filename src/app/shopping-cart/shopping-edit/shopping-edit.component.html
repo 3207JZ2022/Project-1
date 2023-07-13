@@ -1,0 +1,45 @@
+
+<div class="shopping-edit-container" *ngIf="product">
+    <img class="product-img" [src]="product.imgSrc">
+    <div class="product-layout">
+        <div class="product-name-layout">
+            <h4 class="product-name" (click)="navToProduct()" >{{product.name}}</h4>
+        </div>
+
+        <div class="purchase-eligible">
+            <ul class="eligible-list">
+                <h4 class="eligible-title">Eligible For</h4>
+                <li class="eligible-list-item">Free Return</li>
+                <li class="eligible-list-item">Free Delivery</li>
+                <li class="eligible-list-item">In Stock</li>
+                <li class="eligible-list-item">Refund or Replacement within 30 days of receipt</li>
+            </ul>
+        </div>
+
+        <div class="product-quantity-layout">
+            <div class="product-quantity-input">
+                <label class="box-label">Quantity:</label>
+                <button class="input-btn minus-btn" (click)="decreaseQuantity()">-</button>
+                <input type="text" class="quantity-input"  min="1" max="9" disabled
+                    (change)="getTotal"
+                    [value]="orderItem.quantity" 
+                    />
+                <button class="input-btn plus-btn" (click)="increaseQuantity()">+</button>
+                <p class="total-price">Total: ${{totalAmount}}</p>
+            </div>
+
+            <div class="order-options">
+                <span class="order-option"  (click)="removeFromCart()">Delete</span>
+                <span class="order-option">Save for later</span>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="product-price-layout">
+        <p class="product-price">${{orderItem.productPrice}}</p>
+    </div>
+
+
+</div>
