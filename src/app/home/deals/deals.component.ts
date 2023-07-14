@@ -3,7 +3,7 @@ import { Deals } from './deals.model';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import * as fromApp from '../../store/app.reducer';
-import { Subscription,map} from 'rxjs'
+import { Subscription,TimeInterval,map} from 'rxjs'
 import * as DealsActions from './store/deals.actions'
 
 @Component({
@@ -15,7 +15,8 @@ export class DealsComponent {
     deals: Deals|null;
     subscription: Subscription;
     width=520;
-    height=520
+    height=520;
+
     constructor(
                 public router: Router,
                 private store: Store<fromApp.AppState>
@@ -31,8 +32,7 @@ export class DealsComponent {
 
 
       this.store.dispatch(DealsActions.fetchDeals())
-      this.width=Math.min(window.innerWidth*0.9, 660);
-      this.height=Math.min(window.innerWidth*0.9, 660);
+
     }
     ngOnDestroy() {
       this.subscription.unsubscribe();
@@ -41,4 +41,6 @@ export class DealsComponent {
     navToProduct(index: number){
       this.router.navigate(['/product'],{queryParams: {productId:index}})
     }
+
+    
 }

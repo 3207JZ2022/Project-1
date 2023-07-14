@@ -5,11 +5,11 @@
 
     <div class="carousel-main"  
     [style]="carouselDisplayStyle"
-
      >
 
         <div class="carousel-display" 
         [style]="carouselDisplayStyle"
+        #displayRef
 
         >
 
@@ -29,6 +29,7 @@
             
             >
                 <img class="carousel-img" 
+
                 [style]="carouselImgStyle"
                 [@divState]="{value:state, 
                     params:{
@@ -46,10 +47,12 @@
                         halfTime:transitionDuration/2,
                         translateX: width
                     }}"
-            (click)="bindFunction(items[selectedIndex].id)"
 
                 [src]="items[selectedIndex].imgSrc">
+<!-- 
+            (click)="bindFunction(items[selectedIndex].id)"
 
+ -->
                 <img class="carousel-img " 
                 [style]="carouselImgStyle"
                 [@divState]="{value:state, 
@@ -77,6 +80,7 @@
                 *ngFor="let item of items; let index = index"
                 [ngClass]="{'selected': selectedIndex==index}"
                  (click)="selectItem1(index)"
+
                  >
                 </span>
             </div> 

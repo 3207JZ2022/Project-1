@@ -14,6 +14,7 @@ import {
 
 import { ViewportScroller } from '@angular/common';
 import { Router } from '@angular/router';
+import { Observable, Subscription, fromEvent, withLatestFrom, zipWith } from 'rxjs';
 
 @Component({
   selector: 'app-carousel',
@@ -94,6 +95,10 @@ export class CarouselComponent {
   @Input() bindFunction: (args: any) => void =((index)=>{});
 
   @ViewChild('listRef') listRef: ElementRef;
+  @ViewChild('displayRef') displayRef: ElementRef;
+
+  touchEvent: Subscription;
+
   listLength: number=Number.MAX_SAFE_INTEGER;
 
   playSub:ReturnType<typeof setInterval>;
@@ -105,6 +110,7 @@ export class CarouselComponent {
   selectedIndex: number;
   selectedIndexN: number;
 
+  timer:any;
 
   state:string = 'normal';
   thumbState:string='normal'
@@ -140,6 +146,8 @@ export class CarouselComponent {
     width: this.width+"px"
   }
   
+  previousSize:number=-999;
+
   constructor(private scroller: ViewportScroller, private router:Router){};
   ngOnInit(){
     if(!this.unprocessedItems) return;
@@ -158,36 +166,6 @@ export class CarouselComponent {
       this.selectedIndexN=(this.selectedIndex+1)%this.items.length;
       this.selectedIndexP=(this.items.length==1? 0: this.items.length-1);
 
-      this.carouselContainerStyle={
-        height: this.height+this.thumbHeight+"px",
-        width: this.width+"px"
-      }
-
-      this.carouselDisplayStyle={
-        height: this.height+"px",
-        width: this.width+"px"
-      }
-
-      this.carouselImgStyle={
-        height: this.height+"px",
-        width: this.width+"px",
-        left: -this.width +"px"
-      };
-
-      this.leftCtrlStyle={
-        width: this.controlBtnWidth+"px",
-        height: this.height+"px",
-      }
-      this.rightCtrlStyle={
-        width: this.controlBtnWidth+"px",
-        height: this.height+"px",
-        right: '0px'
-      }
-      this.carouselSubStyle={
-        height: 36+this.thumbHeight+"px",
-        width: this.width+"px"
-      }
-
 
 
       if(this.autoPlay&&this.items.length>1){
@@ -195,20 +173,85 @@ export class CarouselComponent {
             this.selectNext();
         }, this.interval);
       }
-
     }
   }
 
   ngAfterViewInit() {
     if(this.unprocessedItems){
-      this.listLength=this.listRef.nativeElement.scrollWidth
+      this.timer = setInterval(() =>{
+        this.height=this.width=Math.min(window.innerWidth*0.9, 660); 
+        if(this.previousSize!==this.width){
+          this.resize();
+        };
+        this.previousSize=this.width
+      },500)
+
+      this.touchEvent= fromEvent<TouchEvent>(this.displayRef.nativeElement, 'touchstart',{capture:true})
+      .pipe(
+        zipWith(
+          fromEvent<TouchEvent>(this.displayRef.nativeElement, 'touchend',{capture:true}).pipe(
+            withLatestFrom(fromEvent<TouchEvent>(this.displayRef.nativeElement, 'touchmove', {capture:true}))
+          )
+        )
+      )
+      .subscribe(([touchstart, [_, touchmove]]) => {
+        const xDiff =
+          touchstart.touches[0].clientX - touchmove.touches[0].clientX;
+        if (Math.abs(xDiff) > 0.3 * document.body.clientWidth &&
+            touchstart.timeStamp <= touchmove.timeStamp) {
+          if (xDiff > 0) {
+            //swipe to right
+            this.selectNext()
+          } else {
+            //swipe to left
+            this.selectPrev()
+          }
+        }
+      });
     }
+
 
   }
 
 
   ngOnDestroy() {
     clearInterval(this.playSub);
+    clearInterval(this.timer)
+    if(this.unprocessedItems) this.touchEvent.unsubscribe();
+  }
+
+  resize(){
+    this.carouselContainerStyle={
+      height: this.height+this.thumbHeight+"px",
+      width: this.width+"px"
+    }
+
+    this.carouselDisplayStyle={
+      height: this.height+"px",
+      width: this.width+"px"
+    }
+
+    this.carouselImgStyle={
+      height: this.height+"px",
+      width: this.width+"px",
+      left: -this.width +"px"
+    };
+
+    this.leftCtrlStyle={
+      width: this.controlBtnWidth+"px",
+      height: this.height+"px",
+    }
+    this.rightCtrlStyle={
+      width: this.controlBtnWidth+"px",
+      height: this.height+"px",
+      right: '0px'
+    }
+    this.carouselSubStyle={
+      height: 36+this.thumbHeight+"px",
+      width: this.width+"px"
+    }
+    this.listLength=this.listRef.nativeElement.scrollWidth
+
   }
 
   scrollThumbIntoView(){
